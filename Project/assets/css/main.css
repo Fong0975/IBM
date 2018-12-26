@@ -1945,7 +1945,7 @@ img {
   transition: all ease-in-out 0.4s;
 }
 .img_box_one img {
-  max-width: 64px;
+  max-width: 120px;
   margin-bottom: 25px;
 }
 .img_box_one h5 {

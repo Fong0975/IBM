@@ -8,7 +8,7 @@
     <meta name="author" content="Pharaohlab">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- ========== Title ========== -->
-    <title>年齡大挑戰 | Visual Recognition</title>
+    <title>關於我們 | Visual Recognition</title>
     <!-- ========== Favicon Ico ========== -->
     <link rel="icon" type="image/png" href="assets/img/user.png">
     <!-- ========== STYLESHEETS ========== -->
@@ -26,14 +26,6 @@
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
-
-    <style type="text/css">
-        .ageTitle{
-            font-size: 18pt;
-            font-weight: bolder;
-        }
-    </style>
-
 </head>
 <body>
 <div class="loader">
@@ -70,7 +62,7 @@
                             圖片辨識
                         </a>
                     </li>
-                    <li  class="active">
+                    <li >
                         <a href="index_challenge">
                             年齡大挑戰
                         </a>
@@ -80,7 +72,7 @@
                             年齡猜猜樂
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="index_aboutus">
                             關於我們
                         </a>
@@ -116,38 +108,81 @@
                                 <div class="content_box_inner">
                                     <div>
                                         <h3>
-                                            年齡大挑戰 Age Challenge
+                                            關於我們 About Us
                                         </h3>
-                                        <table style="width: 100%;"><tr><td style="text-align: center;"><img id="myImg" src="<%= source %>" alt="The Pulpit Rock" width="200px"></td></tr></table>
-                                        
-                                        <div style="text-align: center; margin-top: 20px;">
-                                            <span class="counter" style="color: #FF0000;font-size: 60pt; font-weight: 500;"><%= Math.round((age.min+age.max )/2) %></span> 歲
-                                        </div>
-                                        <div style="text-align: center; margin-top: 20px;">
-                                            <% if(Math.round((age.min+age.max )/2) < 20){ %>
-                                               <p class="ageTitle">WOW，這個年紀...青春年華小鮮肉一枚(口水...</p>
-                                             <% } else if(Math.round((age.min+age.max )/2) < 40) { %>  
-                                               <p class="ageTitle">摁，這個年紀...正值壯年，繼續貢獻勞力吧！</p>
-                                            <% } else if(Math.round((age.min+age.max )/2) < 60) { %>  
-                                               <p class="ageTitle">摁，這個年紀...壯年晚期，看起來年紀有點大呀！</p>
-                                            <% } else if(Math.round((age.min+age.max )/2) < 60) { %>  
-                                               <p class="ageTitle">摁，這個年紀...邁入老年，請好好保養你的容貌．</p>
-                                            <% } else { %>  
-                                               <p class="ageTitle">WOW，這個年紀...國寶啊！！</p>
-                                            <% } %>
-                                        </div>
+                                    </div>
+                                </div>
 
-                                        <p style="font-size: 10pt; margin-top: 90px;">
-                                            年齡分析結果:<br>
-                                            (1)性別: <%= gender.gender %> ； 準確度: <%= new Number((gender.score)*100).toFixed(2) %>％<br>
-                                            (2)年齡: <%= age.min %>  ~  <%= age.max %> ； 準確度: <%= new Number((age.score)*100).toFixed(2) %>％<br>
-                                        </p>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6 col-12">
+                                        <div class="img_box_one text-left">
+                                            <img src="assets/img/user/User2.png" alt="User icon">
+                                            <div class="content">
+                                                <h5>
+                                                    葉姿萱
+                                                </h5>
+                                                <p>
+                                                    B10509037<br>
+                                                    組長<br>
+                                                    回應頁面設計、圖片辨識<br>
+                                                    <span style="font-size: 8pt; font-style: italic;">「Hi, Hi,我是葉姿萱，你們好啊！Love you~」</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="img_box_one text-left">
+                                            <img src="assets/img/user/User4.png" alt="User icon">
+                                            <div class="content">
+                                                <h5>
+                                                    李昱辰
+                                                </h5>
+                                                <p>
+                                                    B10509006<br>
+                                                    打屁組員<br>
+                                                    設計網頁語音程式、語音研究<br>
+                                                    <span style="font-size: 8pt; font-style: italic;">「喔唷！好好好...你不要再用了啦～」</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="img_box_one text-left">
+                                            <img src="assets/img/user/User1.png" alt="User icon">
+                                            <div class="content">
+                                                <h5>
+                                                    馮聖峰
+                                                </h5>
+                                                <p>
+                                                    B10509024<br>
+                                                    叩丁組員<br>
+                                                    網站設計、IBM API、年齡挑戰<br>
+                                                    <span style="font-size: 8pt; font-style: italic;">「把學分拿來喔！」</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <div class="img_box_one text-left">
+                                            <img src="assets/img/user/User3.png" alt="User icon">
+                                            <div class="content">
+                                                <h5>
+                                                    梁修誠
+                                                </h5>
+                                                <p>
+                                                    B10509028<br>
+                                                    助手組員<br>
+                                                    網站美編、專業測試員<br>
+                                                    <span style="font-size: 8pt; font-style: italic;">「今天我們兩個互打，倒在地上的 Bukan aku」</span>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <!--=================== contact info and form end====================-->
                         </div>
-                        <div class="col-md-6 col-5 img_section" style="background-image: url('assets/img/bg/about.png');">
+                        <div class="col-md-6 col-5 img_section" style="background-image: url('assets/img/bg/team.jpg');">
                         </div>
                     </div>
                 </div>
