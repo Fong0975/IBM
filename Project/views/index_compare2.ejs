@@ -8,7 +8,7 @@
     <meta name="author" content="Pharaohlab">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- ========== Title ========== -->
-    <title>關於我們 | Visual Recognition</title>
+    <title>相似圖分析 | Visual Recognition</title>
     <!-- ========== Favicon Ico ========== -->
     <link rel="icon" type="image/png" href="assets/img/user.png">
     <!-- ========== STYLESHEETS ========== -->
@@ -62,7 +62,7 @@
                             圖片辨識
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="index_compare">
                             相似圖分析
                         </a>
@@ -77,7 +77,7 @@
                             年齡猜猜樂
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="index_aboutus">
                             關於我們
                         </a>
@@ -113,81 +113,53 @@
                                 <div class="content_box_inner">
                                     <div>
                                         <h3>
-                                            關於我們 About Us
+                                            相似圖分析 Similar Pictures
                                         </h3>
-                                    </div>
-                                </div>
 
-                                <div class="row justify-content-center">
-                                    <div class="col-md-6 col-12">
-                                        <div class="img_box_one text-left">
-                                            <img src="assets/img/user/User2.png" alt="User icon">
-                                            <div class="content">
-                                                <h5>
-                                                    葉姿萱
-                                                </h5>
-                                                <p>
-                                                    B10509037<br>
-                                                    女神組長<br>
-                                                    回應頁面設計、圖片辨識<br>
-                                                    <span style="font-size: 8pt; font-style: italic;">「子民們，還不快點都給我動起來！！」</span>
-                                                </p>
+                                        <p>
+                                            <h4>Part. II</h4>請上傳要比較的第二張圖片
+                                        </p>
+
+                                        <form id="myForm" action="result_compare" method="post">
+                                            <div>
+                                                <!-- style="display:none;" -->
+                                                <textarea name="firstPic_text" style="display:none;" rows="3" cols="30"><%= pic1_text %></textarea>
+                                                <textarea name="firstPic_pic" style="display:none;" rows="2" cols="30"><%= pic1_source %></textarea>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="img_box_one text-left">
-                                            <img src="assets/img/user/User4.png" alt="User icon">
-                                            <div class="content">
-                                                <h5>
-                                                    李昱辰
-                                                </h5>
-                                                <p>
-                                                    B10509006<br>
-                                                    打屁組員<br>
-                                                    相似圖比較、網頁語音、語音研究<br>
-                                                    <span style="font-size: 8pt; font-style: italic;">「嗯哼～不..不要...停...嗯～」</span>
-                                                </p>
+                                            <div class="mt75 row justify-content-center">
+                                                <div class="col-lg-6 col-12" style="font-size: 10pt; margin-bottom: 15px;">
+                                                    <input type="radio" id="radio-url" name="radiotype" value="url" checked="" onchange="radioChange();"> URL
+                                                </div>
+                                                <div class="col-lg-6 col-12" style="font-size: 10pt; margin-bottom: 15px;">
+                                                    <input type="radio" id="radio-file" name="radiotype" value="file"  onchange="radioChange();"> 上傳圖片
+                                                </div>
+
+                                                <div id="div_url" style="width:100%;">
+                                                    <div class="col-12">
+                                                        <input name="textURL" type="text" placeholder="請輸入網址 URL" class="form-control">
+                                                    </div>
+
+                                                    <div class="col-12" style="margin-top: 50px;">
+                                                        <input class="btn" type="submit" value="年齡挑戰" />
+                                                    </div>
+                                                </div>
+                                                
+
+                                                <div id="div_file" class="col-12" style="display: none;">
+                                                    <label class="btn btn-info">
+                                                        <input id="upload_img" name="images_file" style="display:none;" type="file" onchange="selectFile();">
+                                                        <i class="fa fa-photo"></i> 上傳圖片
+                                                    </label>
+                                                </div>
+                                                
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="img_box_one text-left">
-                                            <img src="assets/img/user/User1.png" alt="User icon">
-                                            <div class="content">
-                                                <h5>
-                                                    馮聖峰
-                                                </h5>
-                                                <p>
-                                                    B10509024<br>
-                                                    扣丁組員<br>
-                                                    網站設計、IBM API、年齡挑戰<br>
-                                                    <span style="font-size: 8pt; font-style: italic;">「Hola～我的寒假」</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="img_box_one text-left">
-                                            <img src="assets/img/user/User3.png" alt="User icon">
-                                            <div class="content">
-                                                <h5>
-                                                    梁修誠
-                                                </h5>
-                                                <p>
-                                                    B10509028<br>
-                                                    助手組員<br>
-                                                    網站美編、專業測試員<br>
-                                                    <span style="font-size: 8pt; font-style: italic;">「今天我們兩個互打，倒在地上的 Bukan aku」</span>
-                                                </p>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                             <!--=================== contact info and form end====================-->
                         </div>
-                        <div class="col-md-6 col-5 img_section" style="background-image: url('assets/img/bg/team.jpg');">
+                        <div class="col-md-6 col-5 img_section" style="background-image: url('assets/img/bg/about.png');">
                         </div>
                     </div>
                 </div>
@@ -217,5 +189,27 @@
 <script src="assets/js/wow.min.js"></script>
 <!-- Custom js -->
 <script src="assets/js/main.js"></script>
+<script type="text/javascript">
+    function radioChange(){
+        if(document.getElementById("radio-url").checked == true){
+            document.getElementById("div_url").style.display = "";
+            document.getElementById("div_file").style.display = "none";
+            document.getElementById("myForm").enctype = "";
+        }else{
+            document.getElementById("div_url").style.display = "none";
+            document.getElementById("div_file").style.display = "";
+            document.getElementById("myForm").enctype = "multipart/form-data";
+        }
+    }
+
+    function selectFile(){
+        if(document.getElementById("upload_img").value !=""){
+            // var str = document.getElementById("upload_img").value.split("\\");
+            // document.getElementById("str_filename").value = str[str.length-1];
+            document.getElementById("myForm").submit()
+        }
+    }
+</script>
+
 </body>
 </html>
