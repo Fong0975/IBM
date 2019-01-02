@@ -90,7 +90,7 @@
                         </a>
                     </li> 
                     <li>
-                        <a href="/">
+                        <a href="/index_guess">
                             年齡猜猜樂
                         </a>
                     </li>
@@ -165,21 +165,27 @@
                                                         </tr>
                                                     </table>
                                                 </div>
-                                                <div>
-                                                    <span>(3) <%= third.class %></span>
-                                                    <table style="width:100%">
-                                                        <tr>
-                                                            <td style="width:80%">
-                                                                <div id="myProgress">
-                                                                  <div id="myBar3"></div> 
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <span><%= new Number((third.score)*100).toFixed(2) %>%</span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
+
+                                                <% if(third == null){ %>
+                                                   
+                                                <% } else{ %>  
+                                                   <div>
+                                                        <span>(3) <%= third.class %></span>
+                                                        <table style="width:100%">
+                                                            <tr>
+                                                                <td style="width:80%">
+                                                                    <div id="myProgress">
+                                                                      <div id="myBar3"></div> 
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <span><%= new Number((third.score)*100).toFixed(2) %>%</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                <% } %>
+                                                
                                         </div>
 
                                         <textarea style="width: 100%; height: 300px;  margin-top: 80px; border:0.2px solid #acacac; font-size: 9pt;resize: none;"><%= alljson %></textarea>
@@ -226,7 +232,12 @@ function score() {
   var elem3 = document.getElementById("myBar3"); 
   var score1 =  <%= new Number((best.score)*100).toFixed(2) %>;
   var score2 =  <%= new Number((second.score)*100).toFixed(2) %>;
-  var score3 =  <%= new Number((third.score)*100).toFixed(2) %>;  
+  var score3 =  
+    <% if(third == null){ %>
+        0
+    <% } else{ %>  
+       <%= new Number((third.score)*100).toFixed(2) %>
+    <% } %> ;
   var width = 1;
   var width2 = 1;
   var width3 = 1;

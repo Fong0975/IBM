@@ -62,9 +62,28 @@ router.post('/', upload.single('images_file'), function (req, res) {
                     scores = scores.sort(function (a, b) { return b[1] - a[1] }); //將分數由大排至小        
                 };
 
-                best = outcome[scores[0][0]];
-                second = outcome[scores[1][0]];
-                third = outcome[scores[2][0]];
+                //+try
+                try {
+                    best = outcome[scores[0][0]];
+                }
+                catch (e) {
+                    best = null;
+                }
+
+                try {
+                    second = outcome[scores[1][0]];
+                }
+                catch (e) {
+                    second = null;
+                }
+
+                try {
+                    third = outcome[scores[2][0]];
+                }
+                catch (e) {
+                    third = null;
+                }
+                
 
                 if (response.images[0].source_url != null) {
                     var source = response.images[0].source_url;
