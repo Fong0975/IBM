@@ -131,14 +131,33 @@
                                         <div style="text-align: center; margin-top: 20px;">
                                             <% if(Math.round((age.min+age.max )/2) < 20){ %>
                                                <p class="ageTitle">WOW，這個年紀...青春年華小鮮肉一枚(口水...</p>
-                                             <% } else if(Math.round((age.min+age.max )/2) < 40) { %>  
+                                                <audio controls="controls" autoplay="autoplay"  height="100" width="100"> 
+                                                     <source src="assets\audio\young.wav"  type="audio/mp3" /> 
+                                                </audio>
+
+                                             <% } else if(Math.round((age.min+age.max )/2) < 30) { %>  
                                                <p class="ageTitle">摁，這個年紀...正值壯年，繼續貢獻勞力吧！</p>
-                                            <% } else if(Math.round((age.min+age.max )/2) < 60) { %>  
+                                                <audio controls="controls" autoplay="autoplay"  height="100" width="100"> 
+                                                     <source src="assets\audio\youngold.wav"  type="audio/mp3" /> 
+                                                </audio>
+
+                                            <% } else if(Math.round((age.min+age.max )/2) < 40) { %>  
                                                <p class="ageTitle">摁，這個年紀...壯年晚期，看起來年紀有點大呀！</p>
+                                                <audio controls="controls" autoplay="autoplay"  height="100" width="100"> 
+                                                    <source src="assets\audio\youngoldold.wav"  type="audio/mp3" /> 
+                                                </audio>
+
                                             <% } else if(Math.round((age.min+age.max )/2) < 60) { %>  
                                                <p class="ageTitle">摁，這個年紀...邁入老年，請好好保養你的容貌．</p>
+                                                <audio controls="controls" autoplay="autoplay"  height="100" width="100"> 
+                                                    <source src="assets\audio\old.wav"  type="audio/mp3" /> 
+                                                </audio>
+
                                             <% } else { %>  
                                                <p class="ageTitle">WOW，這個年紀...國寶啊！！</p>
+                                                <audio controls="controls" autoplay="autoplay"  height="100" width="100"> 
+                                                    <source src="assets\audio\oldold.wav"  type="audio/mp3" /> 
+                                                </audio>
                                             <% } %>
                                         </div>
 
@@ -152,7 +171,7 @@
                             </div>
                             <!--=================== contact info and form end====================-->
                         </div>
-                        <div class="col-md-6 col-5 img_section" style="background-image: url('assets/img/bg/about.png');">
+                        <div class="col-md-6 col-5 img_section" style="background-image: url('assets/img/bg/challenge2.jpeg');">
                         </div>
                     </div>
                 </div>
